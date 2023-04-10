@@ -1,0 +1,229 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+
+  <title>Edit Home</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+<div class="container">
+<section class="vh-100" style="background-color: #eee;">
+  <div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-lg-12 col-xl-11">
+        <div class="card text-black" style="border-radius: 25px;">
+          <div class="card-body p-md-5">
+            <div class="row justify-content-center">
+              <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+
+                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Add Home Record</p>
+
+                <form class="mx-1 mx-md-4" method="post" enctype="multipart/form-data">
+                 {% csrf_token%}
+                  <input type="hidden" value="{{request.user.id}}" name="user_id" >
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                        <label class="form-label" for="form3Example1c">Home Name</label>
+                        <input type="text" id="form3Example1c" class="form-control" name="name" required="" />
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                        <label class="form-label" for="form3Exam">Address</label>
+                        <input type="text" id="form3Exam" class="form-control" name="address" required="" />
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                        <label class="form-label" for="form3E">Phone Number</label>
+                        <input type="number" min="3" maxlength="13" id="form3E" class="form-control" name="phone_number" required="" />
+                    </div>
+                  </div>
+
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                        <label class="form-label" for="form3Example3c">Square Fit</label>
+                        <input type="number" id="form3Example3c" class="form-control" name="square_fit" required="" />
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                        <label class="form-label" for="location">Current Location</label>
+                        <input type="text" id="location" class="form-control" required="" name="location" />
+                    </div>
+                  </div>
+
+                   <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                        <label class="form-label" for="room">Number of Rooms</label>
+                        <input type="number" id="room" class="form-control" required="" name="rooms" />
+                    </div>
+                  </div>
+
+                   <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                        <label class="form-label" for="bath">Number of Bath</label>
+                        <input type="number" id="bath" class="form-control" required="" name="bath" />
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                        <label class="form-label" for="kitchen">Kitchen</label>
+                        <input type="number" id="kitchen" class="form-control" required="" name="kitchen" />
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                          <label class="form-label" for="electricity">Electricity</label>
+                          <select name="electricity" id="electricity" class="form-control">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                  </select>
+                        <!--                        <input type="checkbox" name="electricity" id="electricity" />-->
+                    </div>
+                  </div>
+
+                     <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                        <label class="form-label" for="water">Water</label>
+                        <select name="water" id="water" class="form-control">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                  </select>
+                    </div>
+                  </div>
+
+                   <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                        <label class="form-label" for="gas">Gas</label>
+                        <select name="gas" id="gas" class="form-control">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                  </select>
+                    </div>
+                  </div>
+
+                    <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                        <label class="form-label" for="internet">Internet</label>
+                        <select name="internet" id="internet" class="form-control">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                  </select>
+                    </div>
+                  </div>
+
+
+                     <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                        <label class="form-label" for="internet">Available</label>
+                        <select name="is_available" id="is_available"  class="form-control">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                  </select>
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                        <label class="form-label" for="furnished">Furnished</label>
+                        <select name="furnished" id="furnished" class="form-control">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                  </select>
+                    </div>
+                  </div>
+                    <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                        <label class="form-label" for="rent">Rent</label>
+                        <input type="number" id="rent" class="form-control" required="" name="rent" />
+                    </div>
+                  </div>
+
+
+                   <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                        <label class="form-label" for="images">Home Images</label>
+                        <input type="file" id="images" class="form-control" required="" multiple maxlength="5" name="images[]"  accept="image/png, image/jpeg" />
+                    </div>
+                  </div>
+
+                   <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                        <label class="form-label" for="videos">Home Videos</label>
+                        <input type="file" id="videos" maxlength="1" class="form-control" required=""  accept="video/mp4" name="videos" />
+                    </div>
+                  </div>
+
+
+
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                        <label class="form-label"  for="form3Example4cd">Description</label>
+                        <textarea name="description" cols="30" rows="5"  class="form-control" required="" id="form3Example4cd" ></textarea>
+                    </div>
+                  </div>
+
+                   <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                        <label class="form-label" for="form3Example4cd">Additional Info</label>
+                        <textarea name="additional_info" cols="30" rows="5"  class="form-control" required="" id="fo" ></textarea>
+                    </div>
+                  </div>
+
+
+                  <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                    <button type="submit" class="btn btn-primary btn-lg">Add Home</button>
+                  </div>
+
+                </form>
+
+              </div>
+<!--              <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">-->
+
+<!--                <img src="{% static 'images/blog-2.jpg' %}"-->
+<!--                  class="img-fluid" alt="Sample image">-->
+
+<!--              </div>-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+</body>
+</html>
